@@ -1,7 +1,4 @@
-
 const App = () => {
-  return  <p>app</p>
-}                  
-      
+  return <p>portfolio</p>
+}
 export default App
-     
