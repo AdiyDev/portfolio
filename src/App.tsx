@@ -10,7 +10,13 @@ const App = () => {
             <li>Проекты</li>
           </ul>
         </nav>
-        <button type="button">sign in</button>
+        <ul style={{ listStyle: 'square' }}>
+          <li>i18n</li>
+          <li>theme switch</li>
+          <li>
+            <button type="button">sign in</button>
+          </li>
+        </ul>
       </header>
       <main>dynamic background</main>
       <section>Плеер</section>
