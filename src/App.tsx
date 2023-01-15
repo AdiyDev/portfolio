@@ -23,7 +23,14 @@ const App = () => {
         <section>Плеер</section>
       </main>
       <aside>Опрос c D3.js</aside>
-      <footer>2023</footer>
+      <footer>
+        2023
+        <ul>
+          <li>habr</li>
+          <li>github</li>
+          <li>ln</li>
+        </ul>
+      </footer>
     </>
   )
 }
