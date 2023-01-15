@@ -18,8 +18,10 @@ const App = () => {
           </li>
         </ul>
       </header>
-      <main>dynamic background</main>
-      <section>Плеер</section>
+      <main>
+        <section>dynamic background</section>
+        <section>Плеер</section>
+      </main>
       <aside>Опрос c D3.js</aside>
       <footer>2023</footer>
     </>
