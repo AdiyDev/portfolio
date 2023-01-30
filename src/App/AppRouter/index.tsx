@@ -4,6 +4,6 @@ import App from '../../App'
 export const AppRouter = createBrowserRouter([
   {
     path: '/',
-    element: <App />
-  }
+    element: <App />,
+  },
 ])

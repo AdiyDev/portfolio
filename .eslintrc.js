@@ -1,22 +1,22 @@
-const prettierConfig = require('./prettierrc')
+const prettierConfig = require('./.prettierrc')
 
 module.exports = {
   parserOptions: {
     ecmaVersion: 2020,
     sourceType: 'module',
     ecmaFeatures: {
-      jsx: true
-    }
+      jsx: true,
+    },
   },
   env: {
     browser: true,
     node: true,
-    es6: true
+    es6: true,
   },
   settings: {
     react: {
-      version: 'detect'
-    }
+      version: 'detect',
+    },
   },
   rules: {
     'import/prefer-default-export': 'off',
@@ -33,8 +33,8 @@ module.exports = {
     'no-alert': 'warn',
     'no-use-before-define': 'warn',
     'prettier/prettier': ['warn', prettierConfig],
-    camelcase: 'off'
+    camelcase: 'off',
   },
   extends: ['eslint:recommended', 'prettier', 'plugin:react/recommended', 'plugin:@typescript-eslint/recommended'],
-  plugins: ['prettier']
+  plugins: ['prettier'],
 }
