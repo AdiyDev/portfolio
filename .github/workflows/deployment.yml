@@ -2,9 +2,9 @@ name: Deploy project
 on:
   push:
     branches: [main]
-    paths-ignore: '.gihub/workflows/*'
   pull_request:
     branches: [main]
+  paths-ignore: '.github/workflows/*'
 jobs:
   deploy:
     runs-on: ubuntu-latest
