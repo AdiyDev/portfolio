@@ -1,11 +1,11 @@
-name: GitHub Actions
+name: Deploy project
 on:
   push:
     branches: [main]
   pull_request:
     branches: [main]
 jobs:
-  init:
+  deploy:
     runs-on: ubuntu-latest
     strategy:
       matrix:
