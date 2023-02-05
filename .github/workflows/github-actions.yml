@@ -1,0 +1,32 @@
+name: GitHub Actions
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  init:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [17.x]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Staring Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: install modules
+        run: yarn install
+      - name: build project
+        run: yarn run build
+      - name: lint code
+        run: yarn run lint
+      - name: prettier fix code
+        run: yarn run prettier-fix
+      # - name: build storybook
+      #   run: yarn run build:storybook
+      # - name: unit test
+      #   run: yarn run test:unit
+      # - name: e2e test
+      #   run: yarn run test:e2e
