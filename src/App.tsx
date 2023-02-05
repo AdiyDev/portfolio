@@ -8,7 +8,6 @@ const App = () => {
             <li>Обо мне</li>
             <li>Навыки</li>
             <li>Проекты</li>
-            <li>?</li>
           </ul>
         </nav>
         <ul style={{ listStyle: 'square' }}>
