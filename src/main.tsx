@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom/client'
 import { RouterProvider } from 'react-router-dom'
-import { AppRouter } from './App/AppRouter'
+import { AppRouter } from './app/router'
 
 const root = document.getElementById('root') as HTMLElement
 
