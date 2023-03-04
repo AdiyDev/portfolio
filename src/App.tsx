@@ -1,7 +1,19 @@
+import styled from '@emotion/styled'
+
+type PrimaryType = {
+  primary?: boolean
+}
+
+const MainHeader = styled.header<PrimaryType>((props) => ({
+  display: 'flex',
+  background: 'teal',
+  color: props.primary ? 'red' : 'blue',
+}))
+
 const App = () => {
   return (
     <>
-      <header>
+      <MainHeader primary>
         <a href="#">logo</a>
         <nav>
           <ul>
@@ -17,7 +29,7 @@ const App = () => {
             <button type="button">sign in</button>
           </li>
         </ul>
-      </header>
+      </MainHeader>
       <main>
         <section>dynamic background</section>
         <section>Плеер</section>
