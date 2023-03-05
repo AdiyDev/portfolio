@@ -1,6 +1,4 @@
-import { css, Global } from '@emotion/react'
 import styled from '@emotion/styled'
-import normalize from 'normalize.css'
 
 type MainHeaderProps = {
   primary?: boolean
@@ -15,14 +13,6 @@ const MainHeader = styled.header<MainHeaderProps>((props) => ({
 const App = () => {
   return (
     <>
-      <Global
-        styles={css`
-          ${normalize}
-          body {
-            background-color: #fafafa;
-          }
-        `}
-      ></Global>
       <MainHeader primary>
         <a href="#">logo</a>
         <nav>
