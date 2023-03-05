@@ -1,10 +1,12 @@
+import { css, Global } from '@emotion/react'
 import styled from '@emotion/styled'
+import normalize from 'normalize.css'
 
-type PrimaryType = {
+type MainHeaderProps = {
   primary?: boolean
 }
 
-const MainHeader = styled.header<PrimaryType>((props) => ({
+const MainHeader = styled.header<MainHeaderProps>((props) => ({
   display: 'flex',
   background: 'teal',
   color: props.primary ? 'red' : 'blue',
@@ -13,12 +15,19 @@ const MainHeader = styled.header<PrimaryType>((props) => ({
 const App = () => {
   return (
     <>
+      <Global
+        styles={css`
+          ${normalize}
+          body {
+            background-color: #fafafa;
+          }
+        `}
+      ></Global>
       <MainHeader primary>
         <a href="#">logo</a>
         <nav>
           <ul>
             <li>Обо мне</li>
-            <li>Навыки</li>
             <li>Проекты</li>
           </ul>
         </nav>
