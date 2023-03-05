@@ -1,20 +1,44 @@
+import { Global, css } from '@emotion/react'
 import styled from '@emotion/styled'
 
-type MainHeaderProps = {
-  primary?: boolean
-}
-
-const MainHeader = styled.header<MainHeaderProps>((props) => ({
+const Header = styled.header({
   display: 'flex',
-  background: 'teal',
-  color: props.primary ? 'red' : 'blue',
-}))
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  background: '#2196f3',
+  padding: '0 2rem',
+})
+
+const MainContainer = styled.main({
+  width: '100%',
+  padding: '2rem 0',
+})
+
+const Footer = styled.footer({
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  background: '#2196f3',
+  padding: '0 2rem',
+})
 
 const App = () => {
   return (
     <>
-      <MainHeader primary>
-        <a href="#">logo</a>
+      <Global
+        styles={css`
+          html {
+            font-family: sans-serif;
+            text-rendering: optimizeLegibility;
+          }
+          body {
+            font-family: 'Roboto', 'HelveticaNeue', 'Helvetica Neue', sans-serif;
+            font-size: 16px;
+          }
+        `}
+      />
+      <Header>
+        <div>logo</div>
         <nav>
           <ul>
             <li>Обо мне</li>
@@ -28,20 +52,19 @@ const App = () => {
             <button type="button">sign in</button>
           </li>
         </ul>
-      </MainHeader>
-      <main>
+      </Header>
+      <MainContainer>
         <section>dynamic background</section>
         <section>Плеер</section>
-      </main>
-      <aside>Опрос c D3.js</aside>
-      <footer>
+      </MainContainer>
+      <Footer>
         2023
         <ul>
           <li>habr</li>
           <li>github</li>
           <li>ln</li>
         </ul>
-      </footer>
+      </Footer>
     </>
   )
 }
