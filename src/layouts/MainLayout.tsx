@@ -1,4 +1,5 @@
-import { AppShell, Header, Footer } from '@mantine/core'
+import { AppShell, Footer } from '@mantine/core'
+import { HeaderResponsive } from '@/shared/ui/HeaderResponsive'
 
 interface MainLayoutProps {
   children: React.ReactNode
@@ -9,9 +10,12 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
     <AppShell
       padding="md"
       header={
-        <Header height={60} p="xs">
-          {/* Header */}
-        </Header>
+        <HeaderResponsive
+          links={[
+            { label: 'Обо мне', link: 'about' },
+            { label: 'Проекты', link: 'projects' },
+          ]}
+        />
       }
       footer={
         <Footer height={60} p="md">
