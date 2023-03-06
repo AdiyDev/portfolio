@@ -131,7 +131,7 @@ export function HeaderResponsive({ links }: HeaderResponsiveProps) {
         </Transition>
         <Group spacing={5}>
           <ActionIcon color="violet" variant="light">
-            <IconLanguage size="1rem" />
+            <IconLanguage size="1.2rem" />
           </ActionIcon>
           <ActionIcon
             onClick={() => setAppTheme(appTheme === 'dark' ? 'light' : 'dark')}
@@ -141,7 +141,7 @@ export function HeaderResponsive({ links }: HeaderResponsiveProps) {
               color: theme.colorScheme === 'dark' ? theme.colors.violet[4] : theme.colors.blue[6],
             })}
           >
-            {appTheme === 'dark' ? <IconSun size="1rem" /> : <IconMoonStars size="1.2rem" />}
+            {appTheme === 'dark' ? <IconSun size="1.2rem" /> : <IconMoonStars size="1.2rem" />}
           </ActionIcon>
         </Group>
       </Container>
