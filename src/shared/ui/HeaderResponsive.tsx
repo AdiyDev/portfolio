@@ -10,10 +10,12 @@ import {
   rem,
   Avatar,
   ActionIcon,
+  Button,
 } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import myAvatar from '@/assets/image/myAvatar.png'
 import { IconLanguage, IconSun, IconMoonStars } from '@tabler/icons-react'
+import { notifications } from '@mantine/notifications'
 
 const HEADER_HEIGHT = rem(60)
 
@@ -111,6 +113,36 @@ export function HeaderResponsive({ links }: HeaderResponsiveProps) {
   return (
     <Header height={HEADER_HEIGHT} p="md">
       <Container className={classes.header}>
+        <Group spacing="sm">
+          <ActionIcon color="blue" variant="light">
+            <IconLanguage size="1.2rem" />
+          </ActionIcon>
+          <ActionIcon
+            color="blue"
+            variant="light"
+            sx={(theme) => ({
+              backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+              color: theme.colorScheme === 'dark' ? theme.colors.yellow[4] : theme.colors.blue[6],
+            })}
+            onClick={() => setAppTheme(appTheme === 'dark' ? 'light' : 'dark')}
+          >
+            {appTheme === 'dark' ? <IconSun size="1.2rem" /> : <IconMoonStars size="1.2rem" />}
+          </ActionIcon>
+          <Button
+            size="xs"
+            variant="gradient"
+            gradient={{ from: 'indigo', to: 'cyan' }}
+            onClick={() =>
+              notifications.show({
+                autoClose: 2000,
+                title: 'В разработке',
+                message: 'будет позже...',
+              })
+            }
+          >
+            Регистрация
+          </Button>
+        </Group>
         <Avatar
           component="a"
           href="https://www.linkedin.com/in/arkadiy-bashirov-13a4b6212/"
@@ -129,21 +161,6 @@ export function HeaderResponsive({ links }: HeaderResponsiveProps) {
             </Paper>
           )}
         </Transition>
-        <Group spacing={5}>
-          <ActionIcon color="violet" variant="light">
-            <IconLanguage size="1.2rem" />
-          </ActionIcon>
-          <ActionIcon
-            onClick={() => setAppTheme(appTheme === 'dark' ? 'light' : 'dark')}
-            variant="light"
-            sx={(theme) => ({
-              backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
-              color: theme.colorScheme === 'dark' ? theme.colors.violet[4] : theme.colors.blue[6],
-            })}
-          >
-            {appTheme === 'dark' ? <IconSun size="1.2rem" /> : <IconMoonStars size="1.2rem" />}
-          </ActionIcon>
-        </Group>
       </Container>
     </Header>
   )

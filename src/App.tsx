@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import { MantineProvider } from '@mantine/core'
+import { Notifications } from '@mantine/notifications'
 import MainLayout from './layouts/MainLayout'
 
 const Header = styled.header({
@@ -44,6 +45,7 @@ const App = () => {
         }),
       }}
     >
+      <Notifications />
       <MainLayout>
         <Header>
           <div>logo</div>
