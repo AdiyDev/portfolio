@@ -25,7 +25,6 @@ const App = () => {
         colorScheme: 'dark',
         globalStyles: (theme) => ({
           html: {
-            fontFamily: 'sans-serif',
             textRendering: 'optimizeLegibility',
           },
           body: {
