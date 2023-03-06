@@ -21,6 +21,7 @@ export default {
   },
   transformIgnorePatterns: ['<rootDir>/node_modules/'],
   moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/src/$1',
     '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/test/__mocks__/fileMock.js',
     '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
   },

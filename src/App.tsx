@@ -3,11 +3,6 @@ import { MantineProvider } from '@mantine/core'
 import { Notifications } from '@mantine/notifications'
 import MainLayout from './layouts/MainLayout'
 
-const MainContainer = styled.main({
-  width: '100%',
-  padding: '2rem 0',
-})
-
 const Footer = styled.footer({
   display: 'flex',
   justifyContent: 'space-between',
@@ -38,10 +33,11 @@ const App = () => {
     >
       <Notifications />
       <MainLayout>
-        <MainContainer>
-          <section>dynamic background</section>
-          <section>Плеер</section>
-        </MainContainer>
+        <section>dynamic background</section>
+        <section>
+          <div>Плеер</div>
+        </section>
+
         <Footer>
           2023
           <ul>
