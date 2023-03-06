@@ -1,7 +1,19 @@
 import { useState } from 'react'
-import { createStyles, Header, Container, Group, Burger, Paper, Transition, rem, Avatar } from '@mantine/core'
+import {
+  createStyles,
+  Header,
+  Container,
+  Group,
+  Burger,
+  Paper,
+  Transition,
+  rem,
+  Avatar,
+  ActionIcon,
+} from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import myAvatar from '@/assets/image/myAvatar.png'
+import { IconLanguage, IconSun, IconMoonStars } from '@tabler/icons-react'
 
 const HEADER_HEIGHT = rem(60)
 
@@ -78,6 +90,9 @@ export function HeaderResponsive({ links }: HeaderResponsiveProps) {
   const [active, setActive] = useState(links[0].link)
   const { classes, cx } = useStyles()
 
+  //@todo: add color scheme  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+  const [appTheme, setAppTheme] = useState('dark')
+
   const items = links.map((link) => (
     <a
       key={link.label}
@@ -114,6 +129,21 @@ export function HeaderResponsive({ links }: HeaderResponsiveProps) {
             </Paper>
           )}
         </Transition>
+        <Group spacing={5}>
+          <ActionIcon color="violet" variant="light">
+            <IconLanguage size="1rem" />
+          </ActionIcon>
+          <ActionIcon
+            onClick={() => setAppTheme(appTheme === 'dark' ? 'light' : 'dark')}
+            variant="light"
+            sx={(theme) => ({
+              backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+              color: theme.colorScheme === 'dark' ? theme.colors.violet[4] : theme.colors.blue[6],
+            })}
+          >
+            {appTheme === 'dark' ? <IconSun size="1rem" /> : <IconMoonStars size="1.2rem" />}
+          </ActionIcon>
+        </Group>
       </Container>
     </Header>
   )
