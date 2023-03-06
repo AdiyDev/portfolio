@@ -10,7 +10,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
       padding="md"
       header={
         <Header height={60} p="xs">
-          {/* Header content test*/}
+          {/* Header content */}
         </Header>
       }
       footer={
