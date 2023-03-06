@@ -1,5 +1,5 @@
-import { Global, css } from '@emotion/react'
 import styled from '@emotion/styled'
+import { MantineProvider } from '@mantine/core'
 
 const Header = styled.header({
   display: 'flex',
@@ -24,19 +24,23 @@ const Footer = styled.footer({
 
 const App = () => {
   return (
-    <>
-      <Global
-        styles={css`
-          html {
-            font-family: sans-serif;
-            text-rendering: optimizeLegibility;
-          }
-          body {
-            font-family: 'Roboto', 'HelveticaNeue', 'Helvetica Neue', sans-serif;
-            font-size: 16px;
-          }
-        `}
-      />
+    <MantineProvider
+      withGlobalStyles
+      withNormalizeCSS
+      theme={{
+        colorScheme: 'dark',
+        globalStyles: (theme) => ({
+          html: {
+            fontFamily: 'sans-serif',
+            textRendering: 'optimizeLegibility',
+          },
+          body: {
+            ...theme.fn.fontStyles(),
+            fontFamily: `'Roboto', 'HelveticaNeue', 'Helvetica Neue', sans-serif`,
+          },
+        }),
+      }}
+    >
       <Header>
         <div>logo</div>
         <nav>
@@ -65,7 +69,7 @@ const App = () => {
           <li>ln</li>
         </ul>
       </Footer>
-    </>
+    </MantineProvider>
   )
 }
 
