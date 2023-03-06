@@ -2,9 +2,9 @@ import { render, screen } from '@testing-library/react'
 import App from './App'
 
 describe('test initialized app', () => {
-  test('render link element', () => {
+  test('render music player text', () => {
     render(<App />)
-    const linkElement = screen.getByText(/Обо мне/i)
+    const linkElement = screen.getByText(/Плеер/i)
     expect(linkElement).toBeInTheDocument()
   })
 })
