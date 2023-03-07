@@ -1,4 +1,4 @@
-import image from '@/assets/errorImages/404_img.svg'
+import image from '@/assets/image/404_img.svg'
 import { createStyles, Image, Container, Title, Text, Button, SimpleGrid, rem } from '@mantine/core'
 
 const useStyles = createStyles((theme) => ({
