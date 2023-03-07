@@ -41,6 +41,10 @@ const useStyles = createStyles((theme) => ({
     justifyContent: 'space-between',
     alignItems: 'center',
     height: '100%',
+
+    [theme.fn.smallerThan('xs')]: {
+      padding: `${rem(12)}`,
+    },
   },
 
   links: {
@@ -111,7 +115,7 @@ export function HeaderResponsive({ links }: HeaderResponsiveProps) {
   ))
 
   return (
-    <Header height={HEADER_HEIGHT} p="md">
+    <Header height={HEADER_HEIGHT}>
       <Container className={classes.header}>
         <Group spacing="sm">
           <ActionIcon color="blue" variant="light">
