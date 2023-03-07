@@ -16,7 +16,7 @@ const useStyles = createStyles((theme) => ({
   },
 }))
 
-export function FooterResponsive() {
+export function MainFooter() {
   const { classes } = useStyles()
   const currentYear = new Date().getFullYear()
 
