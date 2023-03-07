@@ -1,5 +1,6 @@
-import { AppShell, Footer } from '@mantine/core'
+import { AppShell } from '@mantine/core'
 import { HeaderResponsive } from '@/shared/ui/HeaderResponsive'
+import { FooterResponsive } from '@/shared/ui/FooterResponsive'
 
 interface MainLayoutProps {
   children: React.ReactNode
@@ -17,11 +18,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
           ]}
         />
       }
-      footer={
-        <Footer height={60} p="md">
-          Application footer
-        </Footer>
-      }
+      footer={<FooterResponsive />}
       styles={(theme) => ({
         main: { backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0] },
       })}
