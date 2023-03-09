@@ -24,9 +24,9 @@ const App = () => {
     >
       <Notifications />
       <MainLayout>
-        <section>dynamic background</section>
+        <section>three.js background</section>
         <section>
-          <div>Плеер</div>
+          <div>player</div>
         </section>
       </MainLayout>
     </MantineProvider>
