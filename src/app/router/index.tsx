@@ -3,15 +3,12 @@ import { NotFoundPage } from '@/pages/NotFoundPage'
 import MainLayout from '@/layouts/MainLayout'
 import AuthLayout from '@/layouts/AuthLayout'
 
-function isAuth() {
-  const isAuthorized = false
-  return isAuthorized
-}
+const isAuth = false
 
 export const router = createBrowserRouter([
   {
     path: '/',
-    element: isAuth() ? <MainLayout /> : <Navigate to="/signin" />,
+    element: isAuth ? <MainLayout /> : <Navigate to="/signin" />,
     children: [
       {
         index: true,
@@ -28,7 +25,7 @@ export const router = createBrowserRouter([
   },
   {
     path: 'signin',
-    element: isAuth() ? <Navigate to="/" /> : <AuthLayout />,
+    element: isAuth ? <Navigate to="/" /> : <AuthLayout />,
     children: [
       {
         index: true,
