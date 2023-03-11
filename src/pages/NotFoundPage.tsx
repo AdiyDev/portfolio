@@ -1,5 +1,5 @@
 import image from '@/assets/image/404_img.svg'
-import { createStyles, Image, Container, Title, Text, Button, SimpleGrid, rem } from '@mantine/core'
+import { createStyles, Image, Container, Title, Text, Button, SimpleGrid, rem, Center } from '@mantine/core'
 import { useNavigate } from 'react-router-dom'
 
 const useStyles = createStyles((theme) => ({
@@ -43,21 +43,23 @@ export function NotFoundPage() {
   const navigate = useNavigate()
 
   return (
-    <Container className={classes.root}>
-      <SimpleGrid spacing={80} cols={2} breakpoints={[{ maxWidth: 'sm', cols: 1, spacing: 40 }]}>
-        <Image src={image} className={classes.mobileImage} />
-        <div>
-          <Title className={classes.title}>Что то пошло не так...</Title>
-          <Text color="dimmed" size="lg">
-            Страница, которую вы пытаетесь открыть, не существует. Возможно, вы ошиблись при вводе адреса или страница
-            была перемещена по другому URL-адресу.
-          </Text>
-          <Button variant="outline" size="md" mt="xl" className={classes.control} onClick={() => navigate('/')}>
-            Вернуться на главную
-          </Button>
-        </div>
-        <Image src={image} className={classes.desktopImage} />
-      </SimpleGrid>
-    </Container>
+    <Center h="100vh">
+      <Container className={classes.root}>
+        <SimpleGrid spacing={80} cols={2} breakpoints={[{ maxWidth: 'sm', cols: 1, spacing: 40 }]}>
+          <Image src={image} className={classes.mobileImage} />
+          <div>
+            <Title className={classes.title}>Что то пошло не так...</Title>
+            <Text color="dimmed" size="lg">
+              Страница, которую вы пытаетесь открыть, не существует. Возможно, вы ошиблись при вводе адреса или страница
+              была перемещена по другому URL-адресу.
+            </Text>
+            <Button variant="outline" size="md" mt="xl" className={classes.control} onClick={() => navigate('/')}>
+              Вернуться на главную
+            </Button>
+          </div>
+          <Image src={image} className={classes.desktopImage} />
+        </SimpleGrid>
+      </Container>
+    </Center>
   )
 }
