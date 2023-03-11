@@ -1,6 +1,7 @@
 import { MantineProvider } from '@mantine/core'
 import { Notifications } from '@mantine/notifications'
-import MainLayout from './layouts/MainLayout'
+import { RouterProvider } from 'react-router-dom'
+import { router } from './app/router'
 
 const App = () => {
   return (
@@ -23,12 +24,7 @@ const App = () => {
       }}
     >
       <Notifications />
-      <MainLayout>
-        <section>three.js background</section>
-        <section>
-          <div>player</div>
-        </section>
-      </MainLayout>
+      <RouterProvider router={router} fallbackElement={<>Загрузка...</>} />
     </MantineProvider>
   )
 }

@@ -1,12 +1,9 @@
+import { Outlet } from 'react-router-dom'
 import { AppShell } from '@mantine/core'
 import { MainHeader } from '@/shared/ui/MainShell/MainHeader'
 import { MainFooter } from '@/shared/ui/MainShell/MainFooter'
 
-interface MainLayoutProps {
-  children: React.ReactNode
-}
-
-const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
+const MainLayout = () => {
   return (
     <AppShell
       padding="md"
@@ -23,7 +20,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
         main: { backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0] },
       })}
     >
-      {children}
+      <Outlet />
     </AppShell>
   )
 }
