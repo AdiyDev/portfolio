@@ -53,7 +53,7 @@ export function NotFoundPage() {
               Страница, которую вы пытаетесь открыть, не существует. Возможно, вы ошиблись при вводе адреса или страница
               была перемещена по другому URL-адресу.
             </Text>
-            <Button variant="outline" size="md" mt="xl" className={classes.control} onClick={() => navigate('/')}>
+            <Button variant="light" size="md" mt="xl" className={classes.control} onClick={() => navigate('/')}>
               Вернуться на главную
             </Button>
           </div>
