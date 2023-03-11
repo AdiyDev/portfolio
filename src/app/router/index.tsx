@@ -3,7 +3,7 @@ import { NotFoundPage } from '@/pages/NotFoundPage'
 import MainLayout from '@/layouts/MainLayout'
 import AuthLayout from '@/layouts/AuthLayout'
 
-const isAuth = false
+const isAuth = true
 
 export const router = createBrowserRouter([
   {

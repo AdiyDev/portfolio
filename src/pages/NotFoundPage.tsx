@@ -1,5 +1,6 @@
 import image from '@/assets/image/404_img.svg'
 import { createStyles, Image, Container, Title, Text, Button, SimpleGrid, rem } from '@mantine/core'
+import { useNavigate } from 'react-router-dom'
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -39,6 +40,7 @@ const useStyles = createStyles((theme) => ({
 
 export function NotFoundPage() {
   const { classes } = useStyles()
+  const navigate = useNavigate()
 
   return (
     <Container className={classes.root}>
@@ -50,7 +52,7 @@ export function NotFoundPage() {
             Страница, которую вы пытаетесь открыть, не существует. Возможно, вы ошиблись при вводе адреса или страница
             была перемещена по другому URL-адресу.
           </Text>
-          <Button variant="outline" size="md" mt="xl" className={classes.control}>
+          <Button variant="outline" size="md" mt="xl" className={classes.control} onClick={() => navigate('/')}>
             Вернуться на главную
           </Button>
         </div>
