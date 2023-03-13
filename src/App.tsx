@@ -1,4 +1,4 @@
-import { MantineProvider } from '@mantine/core'
+import { Loader, MantineProvider } from '@mantine/core'
 import { Notifications } from '@mantine/notifications'
 import { RouterProvider } from 'react-router-dom'
 import { router } from './app/router'
@@ -24,7 +24,7 @@ const App = () => {
       }}
     >
       <Notifications />
-      <RouterProvider router={router} fallbackElement={<>Загрузка...</>} />
+      <RouterProvider router={router} fallbackElement={<Loader color="violet" variant="bars" />} />
     </MantineProvider>
   )
 }
